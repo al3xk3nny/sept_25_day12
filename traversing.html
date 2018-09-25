@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <style>
+        .box {
+            margin: 5px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    
+    <title>Traversing</title>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    
+    <script>
+        // $(".box").first().css("background-color", "blue"); //.first is a jQuery method extension of .box class, as is .css - .css comes through as inline styling in page html. This is called method chaining.
+        
+        // $(".box").last().css("background-color", "green").css("color", "white");
+        
+        // We can also change the method extension on click using the 'this' object. It refers to the object within the function. 
+        // $(".box").click(function() {
+        //   $(this).css("background-color", "blue"); 
+        // });
+        
+        //Affects the next box on click
+        //  $(".box").click(function() {
+        //   $(this).next().css("background-color", "blue"); 
+        // });
+        
+        //Affects the previous box on click
+        //  $(".box").click(function() {
+        //   $(this).prev().css("background-color", "blue"); 
+        // });
+        
+        //Affects the sibling boxes on click (i.e. all but the one you click on)
+         $(".box").click(function() {
+           $(this).siblings().css("background-color", "blue"); 
+        });
+        
+    </script>
+</body>
+</html>
